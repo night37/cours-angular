@@ -1,0 +1,7 @@
+<button class="btn btn-primary" (click)="addFriend()">Ajouter un ami</button>
+
+<ul>
+  @for(ami of lesAmis; track ami.id) {
+    <li><app-one-friend/></li>
+  }
+</ul>

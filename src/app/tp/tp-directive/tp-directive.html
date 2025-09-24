@@ -1,0 +1,19 @@
+<div class="container mx-auto w-full flex flex-col gap-3">
+  <button class="btn bg-blue-500 hover:bg-blue-700 text-white w-full" (click)="detailsHandler()">
+      {{btnLabel}}
+  </button>
+  @if(!toggleDetails) {
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin massa id elit aliquet vestibulum.
+      Nulla in erat sed tortor varius malesuada vel at orci. Phasellus viverra mauris ac nulla hendrerit,
+      non convallis magna tincidunt. In tempor orci magna, eu vestibulum dolor aliquam a.
+      Donec dapibus ac purus eu mollis. Etiam vulputate consectetur ex, ut fringilla massa malesuada nec.
+      Nullam in semper quam. In mi magna, euismod vitae tincidunt vel, venenatis eu metus. Cras viverra consequat lectus,
+      non venenatis libero feugiat a. Etiam elit mauris, eleifend ac urna ut, finibus egestas ligula.
+    </p>
+
+  }
+  @for(item of array; track item) {
+   <p class="text-center" [ngStyle]="{backgroundColor:item > 4 ? 'blue' : 'white'}" [ngClass]="item > 4 ? 'color-white' : ''">{{item}}</p>
+  }
+</div>

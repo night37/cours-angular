@@ -1,0 +1,13 @@
+<div>
+  <input class="input" type="text" placeholder="entrer un nom" [(ngModel)]="inputValue"/>
+  {{inputValue}}
+  <button class="btn btn-primary" (click)="sendFriend = !sendFriend">Ajouter un ami</button>
+  <div>
+    @if(sendFriend) {
+    "Votre ami a été ajouté !"
+    }
+     @else {
+      aucun ami
+    }
+  </div>
+</div>
