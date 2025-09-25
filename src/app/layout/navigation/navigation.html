@@ -1,17 +1,84 @@
-<nav>
-  <div class="navbar navbar-fixed">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="/"><img alt="Logo" src="https://www.solodev.com/assets/side-nav/logo.png"></a>
-      </div>
-      <ul class="navbar-nav navbar-right">
+<nav class="navbar bg-base-100 shadow-lg">
+  <div class="navbar-start">
+    <a routerLink="/" class="btn btn-ghost normal-case text-xl text-primary" aria-label="Retour à l'accueil">
+      <span class="sr-only">Accueil</span>
+      ng-jefff
+    </a>
+  </div>
+
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a routerLink="/home" aria-label="Aller à l'accueil">Accueil</a></li>
+
+      <li class="dropdown dropdown-hover">
+        <label tabindex="0" class="cursor-pointer" aria-haspopup="true" aria-expanded="false">Lessons</label>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a routerLink="lesson-setup">Setup</a></li>
+          <li><a routerLink="lesson-config">Configuration</a></li>
+          <li><a routerLink="lesson-style-libs">Librairies de style</a></li>
+          <li><a routerLink="lesson-components">Les Composants</a></li>
+          <li><a routerLink="lesson-routing">Le routing</a></li>
+          <li><a routerLink="lesson-interpolation">Text Interpolation</a></li>
+          <li><a routerLink="lesson-attribute-binding">Attribute Binding</a></li>
+          <li><a routerLink="lesson-event-binding">Event Binding</a></li>
+          <li><a routerLink="lesson-comp-comm">@Input (props), @Output(emit)</a></li>
+          <li><a routerLink="lesson-http-api">API</a></li>
+          <li><a routerLink="lesson-observables">Observables</a></li>
+          <li><a routerLink="lesson-signals">Signals</a></li>
+          <li><a routerLink="lesson-firebase-db">Firebase RtDb</a></li>
+          <li><a routerLink="register">Firebase Auth-Register</a></li>
+          <li><a routerLink="login">Firebase Auth-Login</a></li>
+          <li><a routerLink="dashboard">DashBoard Admin</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown dropdown-hover">
+        <label tabindex="0" class="cursor-pointer" aria-haspopup="true" aria-expanded="false">Exercices</label>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a routerLink="exo-text-interpolation">Exercice Text Interpolation</a></li>
+          <li><a routerLink="exo-attribute-binding">Exercice Binding</a></li>
+          <li><a routerLink="exo-event-binding">Exercice Event Binding</a></li>
+          <li><a routerLink="exo-two-way-binding">Exercice 2 Way Binding</a></li>
+          <li><a routerLink="exo-conditional-rendering">Exercice NgIf</a></li>
+          <li><a routerLink="exo-dynamic-styling">Exercice NgStyle NgClass</a></li>
+          <li><a routerLink="exo-list-rendering">Exercice NgFor</a></li>
+          <li><a routerLink="exo-two-way-binding">Exercice NgModel</a></li>
+          <li><a routerLink="exo-dynamic-styling">Exercice NgClass NgStyle</a></li>
+          <li><a routerLink="exo-http-api">Exercice Http Api</a></li>
+        </ul>
+      </li>
+
+      <li><a routerLink="contact" routerLinkActive="active" aria-label="Nous contacter">Contact</a></li>
+      <li><a routerLink="register">Inscription</a></li>
+      <li><a routerLink="login">Connexion</a></li>
+      <li><a routerLink="dashboard">DashBoard Admin</a></li>
+      <li><a (click)="logOut()" aria-label="Nous contacter">Déconnexion</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-end">
+    <label class="swap swap-rotate mr-2">
+      <input type="checkbox" class="theme-controller" value="dark" aria-label="Changer le thème" />
+      <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64 17.657l-1.414 1.415L4.636 21l1.415-1.414L5.64 17.657zm12.02 0l1.415 1.415-1.415 1.414-1.415-1.414 1.415-1.415zM12 4V2h-1v2h1zm0 18v-2h-1v2h1zm8-8h2v-1h-2v1zM2 12H0v-1h2v1zm17.657-5.657l1.415-1.415-1.415-1.415-1.415 1.415 1.415 1.415zM6.343 6.343L4.93 4.93 3.515 6.343l1.414 1.415L6.343 6.343z" /></svg>
+      <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64 13.35A9 9 0 0 1 10.65 2.36 7 7 0 1 0 21.64 13.35z" /></svg>
+    </label>
+
+    <div class="dropdown dropdown-end">
+      <label tabindex="0" class="btn btn-ghost lg:hidden" aria-label="Ouvrir le menu mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </label>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a routerLink="/">Accueil</a></li>
         <li>
-          <a routerLink="/home">Home</a>
+          <details>
+            <summary>Lessons</summary>
+            <ul>
+              <li><a routerLink="lesson-setup">Setup</a></li>
+              <li><a routerLink="lesson-config">Configuration</a></li>
+            </ul>
+          </details>
         </li>
-        <li>
-          <a routerLink="/about">About Us</a>
-        </li>
-      </ul>
+        </ul>
     </div>
   </div>
 </nav>

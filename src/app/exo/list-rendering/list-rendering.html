@@ -1,0 +1,23 @@
+<div class="flex">
+  @for (userProfile of userProfiles; track userProfile.id) {
+    <app-list-rendering-child [userProfile]="userProfile" />
+  }
+  <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+    <legend class="fieldset-legend">Page details</legend>
+
+    <!-- <label class="label">url de l'image</label> -->
+    <!-- <input type="text" class="input" [(ngModel)]="oneFriendImgUrl" placeholder="img url" /> -->
+
+    <label class="label">Votre nom</label>
+    <input type="text" class="input" [(ngModel)]="name" placeholder="John Doe" />
+
+    <!-- <label class="label">Votre age</label> -->
+    <!-- <input type="number" class="input" [(ngModel)]="oneFriendAge" placeholder="Age" /> -->
+    <!-- <label class="label">Votre bio</label> -->
+    <!-- <textarea class="textarea" [(ngModel)]="oneFriendBio" placeholder="Bio"></textarea> -->
+    <!-- <label class="label">Status</label> -->
+    <button (click)="createUser()">Ajouter un ami</button>
+  </fieldset>
+
+</div>
+

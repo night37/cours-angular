@@ -1,0 +1,14 @@
+<p>pokemon works!</p>
+<div class=" flex  flex-wrap gap-5 px-10">
+  @for(pokemon of pokemons; track (pokemon)) {
+    <div class="card bg-base-100 w-[100px] shadow-sm gr flex flex-col gap-3">
+      <figure>
+        <img class="object-cover" [src]="pokemon.sprites.regular"/>
+
+      </figure>
+      <h2 class="font-mono text-center">
+        {{pokemon.name.fr}}
+      </h2>
+    </div>
+  }
+</div>
